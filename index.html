@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Athirah Karir</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <!-- ================= HEADER ================= -->
+    <header class="navbar">
+        <div class="logo">
+            <div class="logo-box">
+            <img src="logo.jpg" alt="Logo Athirah">
+            </div>
+            <span>Athirah Karir</span>
+        </div>
+        <nav>
+            <a href="campuscard.html">Kampus</a>
+            <a href="#jurusancard.html">Jurusan</a>
+            <a href="#prestasi">Prestasi</a>
+            <a href="#tentang">Tentang</a>
+        </nav> 
+    </header>
+          <!-- ================= HERO ================= -->
+    <section class="hero">
+        <div class="hero-content">
+
+            <div class="school-label">
+                SMA Islam Athirah Bukit Baruga
+            </div>
+
+            <h1>
+                Cari jejak kuliah dan<br>
+                prestasi alumni.
+            </h1>
+
+            <p>
+                Athirah Karir membantu siswa melihat kampus, jurusan,
+                dan prestasi <br>alumni SMA Islam Athirah Bukit Baruga — sebagai gambaran nyata
+                sebelum memilih jalur selanjutnya.
+            </p>
+
+ <!-- ================= SEARCH UTAMA ================= -->
+
+<div class="search-box">
+
+    <span class="search-icon">⌕</span>
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Cari nama, kampus, jurusan, atau prestasi"
+    >
+
+    <button onclick="showSearchPanel()">
+        Cari
+    </button>
+
+</div>
+
+
+<!-- ================= SEARCH MODAL ================= -->
+
+<div id="searchModal" class="search-modal">
+
+    <div class="search-modal-content">
+
+        <!-- HEADER -->
+        <div class="modal-header">
+
+            <div>
+                <span>ATHIRAH KARIR</span>
+
+                <h2>Cari Alumni</h2>
+
+                <p>
+                    Temukan alumni berdasarkan kampus, jurusan,
+                    angkatan, dan jalur masuk.
+                </p>
+            </div>
+
+            <button
+                class="close-modal"
+                onclick="closeSearch()">
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- SEARCH DALAM POPUP -->
+
+        <div class="modal-search">
+
+            <span>⌕</span>
+
+            <input
+                type="text"
+                id="keyword"
+                placeholder="Nama, kampus, jurusan, prestasi..."
+            >
+
+        </div>
+
+
+        <!-- ================= FILTER ================= -->
+
+        <div class="filter-grid">
+
+            <!-- KAMPUS -->
+
+            <div class="filter-item">
+
+                <label>Kampus</label>
+
+                <select id="kampusFilter">
+
+                    <option value="">
+                        Semua kampus
+                    </option>
+
+                    <option value="Universitas Indonesia">
+                        Universitas Indonesia
+                    </option>
+
+                    <option value="Universitas Gadjah Mada">
+                        Universitas Gadjah Mada
+                    </option>
+
+                    <option value="Universitas Hasanuddin">
+                        Universitas Hasanuddin
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- JURUSAN -->
+
+            <div class="filter-item">
+
+                <label>Jurusan</label>
+
+                <select id="jurusanFilter">
+
+                    <option value="">
+                        Semua jurusan
+                    </option>
+
+                    <option value="Kedokteran">
+                        Kedokteran
+                    </option>
+
+                    <option value="Teknik">
+                        Teknik
+                    </option>
+
+                    <option value="Hukum">
+                        Hukum
+                    </option>
+
+                    <option value="Ekonomi">
+                        Ekonomi
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ANGKATAN -->
+
+            <div class="filter-item">
+
+                <label>Angkatan</label>
+
+                <select id="angkatanFilter">
+
+                    <option value="">
+                        Semua angkatan
+                    </option>
+
+                    <option value="2026">2026</option>
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- JALUR -->
+
+            <div class="filter-item">
+
+                <label>Jalur Penerimaan</label>
+
+                <select id="jalurFilter">
+
+                    <option value="">
+                        Semua jalur masuk
+                    </option>
+
+                    <option value="SNBP">
+                        SNBP
+                    </option>
+
+                    <option value="SNBT">
+                        SNBT
+                    </option>
+
+                    <option value="Mandiri">
+                        Mandiri
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- FAKULTAS -->
+
+            <div class="filter-item">
+
+                <label>Fakultas</label>
+
+                <select id="fakultasFilter">
+
+                    <option value="">
+                        Semua fakultas
+                    </option>
+
+                    <option value="Kedokteran">
+                        Kedokteran
+                    </option>
+
+                    <option value="Teknik">
+                        Teknik
+                    </option>
+
+                    <option value="Ekonomi">
+                        Ekonomi
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- URUTKAN -->
+
+            <div class="filter-item">
+
+                <label>Urutkan</label>
+
+                <select id="sortFilter">
+
+                    <option value="terbaru">
+                        Angkatan terbaru
+                    </option>
+
+                    <option value="terlama">
+                        Angkatan terlama
+                    </option>
+
+                    <option value="nama">
+                        Nama A-Z
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESET -->
+
+        <button
+            type="button"
+            class="reset-button"
+            onclick="resetFilter()">
+
+            ↻ Reset
+
+        </button>
+
+
+        <!-- ================= HASIL ================= -->
+
+        <div class="modal-result">
+
+            <div class="result-title">
+
+                <h3>Hasil Alumni</h3>
+
+                <span id="resultCount">
+                    Menampilkan semua alumni
+                </span>
+
+            </div>
+
+
+            <div
+                id="searchResult"
+                class="search-result-grid">
+            </div>
+
+
+            <!-- JIKA TIDAK ADA HASIL -->
+
+            <div
+                id="emptyResult"
+                class="empty-result">
+
+                <h3>Alumni tidak ditemukan</h3>
+
+                <p>
+                    Coba ubah filter pencarian kamu.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>  
+       
+          
+
+
+         <!-- STATISTICS -->
+            <div class="statistics">
+
+                <div class="stat">
+                    <strong>2.340</strong>
+                    <span>ALUMNI</span>
+                </div>
+
+                <div class="stat">
+                    <strong>187</strong>
+                    <span>PERGURUAN TINGGI</span>
+                </div>
+
+                <div class="stat">
+                    <strong>412</strong>
+                    <span>JURUSAN</span>
+                </div>
+
+                <div class="stat">
+                    <strong>638</strong>
+                    <span>PRESTASI</span>
+                </div>
+
+            </div>
+
+    </section>
+
+
+      <!-- ================= MENU FITUR ================= -->
+    <section class="feature-menu">
+        <div class="feature" id="kampus">
+            <div class="feature-icon">🎓</div>
+            <h3>Kampus</h3>
+            <p>
+                Lihat sebaran alumni per
+                perguruan tinggi.
+            </p>
+        </div>
+        <div class="feature" id="jurusan">
+            <div class="feature-icon">📚</div>
+            <h3>Jurusan</h3>
+            <p>
+                Temukan jurusan lintas kampus.
+            </p>
+        </div>
+        <div class="feature" id="prestasi">
+            <div class="feature-icon">🏆</div>
+            <h3>Prestasi</h3>
+            <p>
+                Beasiswa, olimpiade,
+                dan kompetisi.
+            </p>
+        </div>
+
+        <div class="feature" id="angkatan">
+            <div class="feature-icon">📅</div>
+            <h3>Angkatan</h3>
+            <p>
+                Saring alumni berdasarkan
+                tahun lulus SMA.
+            </p>
+        </div>
+    </section>
+        
+<script src="script.js"></script>
+
+    </body>
+</html>
