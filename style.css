@@ -200,6 +200,406 @@ body {
 .search-box button:hover {
     background: #eeb62c;
 }
+/* =========================================
+   HOME RESULT
+========================================= */
+
+.home-results {
+    background: #f5faf7;
+    padding: 70px 7%;
+}
+
+.home-results h2 {
+    color: #174f3b;
+    font-family: "Playfair Display", serif;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.home-results-subtitle {
+    color: #60736a;
+    margin-bottom: 30px;
+}
+/* =========================================
+   GENERAL PAGE
+========================================= */
+
+.page-section {
+    background: #f5faf7;
+    min-height: 100vh;
+    padding: 60px 7% 90px;
+}
+
+.page-header {
+    max-width: 900px;
+    margin-bottom: 35px;
+}
+
+.page-header h1 {
+    color: #174f3b;
+    font-family: "Playfair Display", serif;
+    font-size: 45px;
+    margin-bottom: 12px;
+}
+
+.page-header p {
+    color: #60736a;
+    line-height: 1.6;
+}
+/* =========================================
+   ALUMNI CARD
+========================================= */
+
+.alumni-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* =========================================
+   KARTU ALUMNI
+========================================= */
+
+.alumni-card {
+    background: #ffffff;
+    border: 1px solid #bdebd7;
+    border-radius: 18px;
+    padding: 24px;
+
+    transition: 0.2s ease;
+}
+
+.alumni-card:hover {
+    border-color: #40c98a;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   HEADER ALUMNI
+========================================= */
+
+.alumni-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   INISIAL
+========================================= */
+
+.alumni-avatar {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 10px;
+
+    background: #174f3b;
+    color: #f7c943;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   NAMA
+========================================= */
+
+.alumni-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.alumni-info h3 {
+    margin: 0 0 7px 0;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    color: #174f3b;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================
+   BADGE
+========================================= */
+
+.alumni-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+
+/* Angkatan */
+
+.alumni-year {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 5px 10px;
+
+    background: #f7c943;
+    color: #174f3b;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+/* Jalur masuk */
+
+.alumni-path {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 5px 10px;
+
+    background: #d9f7e9;
+    color: #247a59;
+
+    border: 1px solid #9de1c2;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    line-height: 1;
+}
+
+
+/* =========================================
+   INFORMASI KAMPUS
+========================================= */
+
+.alumni-detail {
+    background: #f5f8f7;
+
+    border-radius: 12px;
+
+    padding: 14px;
+
+    margin-top: 10px;
+}
+
+
+.alumni-detail p {
+    margin: 0 0 9px 0;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 8px;
+
+    font-size: 13px;
+
+    color: #60736a;
+
+    line-height: 1.4;
+}
+
+
+.alumni-detail p:last-child {
+    margin-bottom: 0;
+}
+
+
+.alumni-detail p span {
+    width: 18px;
+
+    flex-shrink: 0;
+
+    text-align: center;
+}
+
+
+/* Nama kampus */
+
+.campus-name {
+    color: #174f3b !important;
+    font-weight: 600;
+}
+
+
+/* Fakultas */
+
+.faculty-name {
+    color: #60736a;
+}
+
+
+/* Jurusan */
+
+.major-name {
+    color: #60736a;
+}
+
+
+/* =========================================
+   PRESTASI
+========================================= */
+
+.achievement {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 14px;
+
+    padding: 7px 11px;
+
+    background: #fff7d6;
+
+    border: 1px solid #f7c943;
+
+    border-radius: 7px;
+
+    color: #9a6700;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.achievement-icon {
+    font-size: 13px;
+}
+
+
+
+.alumni-detail {
+    background: #f5f8f7;
+    border-radius: 12px;
+    padding: 14px;
+    margin-top: 10px;
+}
+
+.alumni-detail p {
+    margin: 0 0 8px 0;
+    font-size: 13px;
+    color: #60736a;
+}
+
+.alumni-detail p:last-child {
+    margin-bottom: 0;
+}
+/* =========================================
+   KAMPUS
+========================================= */
+
+.kampus-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.kampus-card {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr 2fr 2fr 120px;
+    align-items: center;
+    gap: 20px;
+
+    padding: 20px 25px;
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.kampus-nama {
+    min-width: 0;
+}
+
+.kampus-nama h3 {
+    margin: 0;
+    color: #174f3b;
+    font-size: 18px;
+}
+
+.kampus-info {
+    display: contents;
+}
+
+.kampus-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.jumlah-alumni {
+    justify-self: start;
+    white-space: nowrap;
+    padding: 8px 14px;
+    background: #a9e4c8;
+    color: #174f3b;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   FAKULTAS
+========================================= */
+
+.fakultas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.fakultas-card {
+    background: #ffffff;
+    border: 1px solid #d8eee2;
+    border-radius: 14px;
+    padding: 25px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.fakultas-card:hover {
+    transform: translateY(-5px);
+    border-color: #40c98a;
+    box-shadow: 0 8px 25px rgba(23, 79, 59, 0.08);
+}
+
+.fakultas-card h2 {
+    color: #174f3b;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.fakultas-card p {
+    color: #60736a;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
 
 
 /* =========================================
@@ -312,389 +712,318 @@ body {
     font-size: 16px;
     line-height: 1.6;
 }
-/* ================= SEARCH MODAL ================= */
+/* =========================================
+   FILTER ALUMNI
+========================================= */
 
-.search-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    background: rgba(20, 40, 35, 0.60);
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-/* Saat popup dibuka */
-.search-modal.show {
-    display: flex;
-}
-
-/* ================= MODAL CONTENT ================= */
-
-.search-modal-content {
-
-    width: 900px;
-    max-width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
-    background: white;
+.alumni-filter {
+    background: #ffffff;
+    border: 1px solid #d8eee2;
     border-radius: 14px;
-    padding: 28px;
-    box-sizing: border-box;
-    box-shadow:
-        0 20px 60px rgba(0, 0, 0, .20);
-}
-/* =========================================
-   HEADER
-========================================= */
+    padding: 20px;
+    margin-bottom: 30px;
 
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 22px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
 }
 
-
-.modal-header span {
-    color: #40c98a;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-}
-
-
-.modal-header h2 {
-    margin: 5px 0 6px;
-    color: #14203a;
-    font-family: "Playfair Display", serif;
-    font-size: 30px;
-}
-
-
-.modal-header p {
-    margin: 0;
-    color: #60738e;
-    font-size: 13px;
-    line-height: 1.5;
-}
-
-
-/* =========================================
-   TOMBOL CLOSE
-========================================= */
-
-.close-modal {
-    width: 35px;
-    height: 35px;
-    border: none;
-    border-radius: 50%;
-    background: #f2f6fa;
-    color: #334762;
-    font-size: 23px;
-    cursor: pointer;
-}
-
-
-.close-modal:hover {
-    background: #e8eef4;
-}
-
-
-/* =========================================
-   SEARCH DI DALAM POPUP
-========================================= */
-
-.modal-search {
-    height: 43px;
-    display: flex;
-    align-items: center;
-    border: 1px solid #d9e2ec;
-    border-radius: 7px;
-    background: #f7f9fb;
-    margin-bottom: 18px;
-}
-
-
-.modal-search span {
-    padding-left: 14px;
-    font-size: 22px;
-    color: #8ca1bd;
-}
-
-
-.modal-search input {
+.alumni-filter select {
     width: 100%;
-    height: 41px;
+    height: 42px;
     padding: 0 12px;
-    border: none;
-    outline: none;
-    background: transparent;
-    color: #17243b;
-    font-size: 14px;
-    font-family: inherit;
-}
-
-
-/* =========================================
-   FILTER
-========================================= */
-
-.filter-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 14px;
-}
-
-
-.filter-item label {
-    display: block;
-    color: #60738e;
-    font-size: 11px;
-    font-weight: 600;
-    margin-bottom: 6px;
-}
-
-
-.filter-item select {
-    width: 100%;
-    height: 41px;
-    padding: 0 14px;
-    border: 1px solid #d9e2ec;
+    border: 1px solid #d5e5dc;
     border-radius: 7px;
-    background: #f7f9fb;
-    color: #243249;
+    background: #f7faf8;
+    color: #174f3b;
     font-family: inherit;
     font-size: 13px;
     outline: none;
-    cursor: pointer;
 }
 
-
-.filter-item select:focus {
-    border-color: #4a9b75;
-}
-
-
-/* =========================================
-   RESET
-========================================= */
-
-.reset-button {
-    width: 100px;
-    height: 35px;
-    border: 1px solid #d7e1eb;
-    border-radius: 7px;
-    background: #f2f6fa;
-    color: #334762;
-    font-family: inherit;
-    font-size: 13px;
-    cursor: pointer;
-}
-
-
-.reset-button:hover {
-    background: #e9f0f6;
-
-}
-
-
-/* =========================================
-   HASIL
-========================================= */
-
-.modal-result {
-    margin-top: 25px;
-    padding-top: 20px;
-    border-top: 1px solid #e5ebf1;
-}
-
-
-.result-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 15px;
-}
-
-
-.result-title h3 {
-    margin: 0;
-    color: #14203a;
-    font-size: 17px;
-}
-
-
-.result-title span {
-    color: #7b8ca3;
-    font-size: 12px;
-}
-
-
-/* =========================================
-   CARD ALUMNI
-========================================= */
-
-.search-result-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-}
-
-
-.search-alumni-card {
-    padding: 18px;
-    background: #f7f9fb;
-    border: 1px solid #e1e8ef;
-    border-radius: 10px;
-    transition: .2s;
-}
-
-
-.search-alumni-card:hover {
-    transform: translateY(-2px);
+.alumni-filter select:focus {
     border-color: #40c98a;
 }
 
 
-.search-alumni-card h3 {
-    margin: 0 0 12px;
-    color: #14203a;
-    font-size: 15px;
+/* =========================================
+   FILTER TAHUN
+========================================= */
+
+.tahun-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
 }
 
+.tahun-filter button {
+    border: 1px solid #bfe4d0;
+    background: #ffffff;
+    color: #174f3b;
+    padding: 10px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
 
-.search-alumni-card p {
-    margin: 7px 0;
-    color: #60738e;
-    font-size: 12px;
+.tahun-filter button:hover {
+    background: #a9e4c8;
+}
+
+.tahun-filter button.active {
+    background: #174f3b;
+    color: #ffffff;
+    border-color: #174f3b;
 }
 
 
 /* =========================================
-   TIDAK ADA HASIL
+   EMPTY RESULT
 ========================================= */
 
 .empty-result {
-    display: none;
+    background: #ffffff;
+    border: 1px solid #d8eee2;
+    border-radius: 14px;
+    padding: 40px;
     text-align: center;
-    padding: 30px 10px;
-    color: #60738e;
 }
 
-
 .empty-result h3 {
-    margin-bottom: 5px;
-    color: #14203a;
+    color: #174f3b;
+    margin-bottom: 8px;
+}
+
+.empty-result p {
+    color: #60736a;
+}
+/* =========================================
+   ADMIN
+========================================= */
+
+.admin-page {
+    background: #f5faf7;
+    min-height: 100vh;
+    padding: 60px 7%;
+}
+
+.admin-box {
+    max-width: 1000px;
+    margin: auto;
+    background: #ffffff;
+    border: 1px solid #d8eee2;
+    border-radius: 14px;
+    padding: 30px;
+}
+
+.admin-box h1 {
+    color: #174f3b;
+    margin-bottom: 10px;
+}
+
+.admin-box > p {
+    color: #60736a;
+    margin-bottom: 25px;
+}
+
+.admin-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.admin-form input,
+.admin-form select,
+.admin-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d5e5dc;
+    border-radius: 7px;
+    font-family: inherit;
+    outline: none;
+}
+
+.admin-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.admin-form input:focus,
+.admin-form select:focus,
+.admin-form textarea:focus {
+    border-color: #40c98a;
+}
+
+.admin-form .full {
+    grid-column: 1 / -1;
+}
+
+.admin-button {
+    background: #f7c943;
+    border: none;
+    color: #174f3b;
+    padding: 12px 20px;
+    border-radius: 7px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.admin-button.green {
+    background: #40c98a;
+}
+
+.admin-button.red {
+    background: #e57373;
+    color: #ffffff;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 
 /* =========================================
-   MOBILE
+   ADMIN TABLE
 ========================================= */
 
-@media (max-width: 700px) {
-
-    .search-modal {
-        padding: 12px;
-    }
-
-    .search-modal-content {
-        padding: 20px;
-        max-height: 94vh;
-    }
-
-    .filter-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .search-result-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .result-title {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
-    }
-
+.admin-table-wrapper {
+    overflow-x: auto;
+    margin-top: 30px;
 }
 
-@media (max-width: 800px) {
-    .navbar {
-        padding: 0 20px;
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th {
+    background: #174f3b;
+    color: #ffffff;
+    padding: 12px;
+    text-align: left;
+    font-size: 13px;
+}
+
+.admin-table td {
+    padding: 12px;
+    border-bottom: 1px solid #d8eee2;
+    font-size: 13px;
+    color: #52675d;
+}
+
+.admin-table button {
+    border: none;
+    padding: 7px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    background: #174f3b;
+    color: #ffffff;
+    padding: 45px 7%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.footer strong {
+    color: #f7c943;
+    font-size: 20px;
+}
+
+.footer p {
+    color: #dff5e9;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.footer a {
+    color: #ffffff;
+    font-size: 13px;
+}
+
+.footer a:hover {
+    color: #f7c943;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(255,255,255,.2);
+    padding-top: 20px;
+    margin-top: 15px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .alumni-grid,
+    .kampus-grid,
+    .fakultas-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .navbar nav {
-        gap: 15px;
-    }
-
-    .navbar nav a {
-        font-size: 12px;
-    }
-
-    .hero-content {
-        padding: 60px 20px 40px;
+    .alumni-filter {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .hero h1 {
         font-size: 45px;
-        letter-spacing: -1px;
     }
 
-    .hero p {
-        font-size: 14px;
-    }
-
-    .statistics {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-        max-width: 500px;
-    }
-
-    .stat {
-        border-right: none;
-        padding: 0;
-    }
-
-    .stat:not(:first-child) {
-        padding-left: 0;
-    }
-
-    .feature-menu {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .feature {
-        padding: 25px;
+    .footer {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
 
     .navbar {
         height: auto;
-        min-height: 70px;
+        min-height: 75px;
+        padding: 15px 5%;
         flex-direction: column;
         gap: 15px;
-        padding: 15px 20px;
     }
 
-    .navbar nav {
-        width: 100%;
-        justify-content: center;
+    .nav-links {
         gap: 15px;
         flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+        margin: 0;
     }
 
     .hero {
-        min-height: auto;
-    }
-
-    .hero-content {
-        padding: 45px 20px 35px;
+        padding: 70px 5%;
     }
 
     .hero h1 {
@@ -702,34 +1031,35 @@ body {
     }
 
     .hero p {
-        font-size: 14px;
-        line-height: 1.7;
+        font-size: 15px;
     }
 
-    .search-box {
-        height: 50px;
+    .page-section,
+    .home-results,
+    .admin-page {
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
-    .search-box button {
-        width: 65px;
-    }
-
-    .statistics {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-
-    .stat strong {
-        font-size: 28px;
-    }
-
-    .feature-menu {
+    .alumni-grid,
+    .kampus-grid,
+    .fakultas-grid {
         grid-template-columns: 1fr;
     }
 
-    .feature {
-        min-height: auto;
-        border-right: none;
-        border-bottom: 1px solid rgba(23,79,59,0.1);
+    .alumni-filter {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-form {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-form .full {
+        grid-column: auto;
+    }
+
+    .footer {
+        grid-template-columns: 1fr;
     }
 }

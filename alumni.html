@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Athirah Studytrack</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <!-- ================= HEADER ================= -->
+    <header class="navbar">
+        <div class="logo">
+            <div class="logo-box">
+            <img src="logo.jpg" alt="Logo Athirah">
+            </div>
+            <span>Athirah StudyTrack</span>
+        </div>
+        <nav>
+             <a href="kampus.html">Kampus</a>
+            <a href="alumni.html">Alumni</a>
+            <a href="fakultas.html">Fakultas</a>
+            <a href="index.html#hero">Beranda</a>
+        </nav> 
+    </header>
+
+<!-- =========================================
+     ALUMNI
+========================================= -->
+
+<main>
+
+    <section class="page-section">
+
+
+        <div class="page-header">
+
+            <h1>
+                Alumni
+            </h1>
+
+            <p>
+                Jelajahi data alumni SMA Islam Athirah
+                Bukit Baruga berdasarkan lima tahun
+                angkatan terbaru.
+            </p>
+
+        </div>
+
+
+
+        <!-- =====================================
+             TAHUN
+        ====================================== -->
+
+        <div
+            id="tahunContainer"
+            class="tahun-filter"
+        ></div>
+
+
+
+        <!-- =====================================
+             FILTER
+        ====================================== -->
+
+        <div class="alumni-filter">
+
+
+            <select id="filterKampus">
+
+                <option value="">
+                    Semua Kampus
+                </option>
+
+            </select>
+
+
+            <select id="filterFakultas">
+
+                <option value="">
+                    Semua Fakultas
+                </option>
+
+            </select>
+
+
+            <select id="filterJurusan">
+
+                <option value="">
+                    Semua Jurusan
+                </option>
+
+            </select>
+
+
+            <select id="filterPrestasi">
+
+                <option value="">
+                    Semua Prestasi
+                </option>
+
+                <option value="ada">
+                    Ada Prestasi
+                </option>
+
+                <option value="tidak">
+                    Tidak Ada Prestasi
+                </option>
+
+            </select>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             DATA ALUMNI
+        ====================================== -->
+
+        <div
+            id="alumniContainer"
+            class="alumni-grid"
+        ></div>
+
+
+    </section>
+
+</main>
+
+
+
+ <footer class="footer">
+
+    <div>
+        <strong>
+            Athirah StudyTrack
+        </strong>
+
+        <p>
+            Informasi rekam jejak alumni
+            SMA Islam Athirah Bukit Baruga.
+        </p>
+    </div>
+
+
+    <div>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="kampus.html">
+            Kampus
+        </a>
+
+        <a href="alumni.html">
+            Alumni
+        </a>
+
+        <a href="fakultas.html">
+            Fakultas
+        </a>
+
+    </div>
+
+
+    <div>
+
+        <a href="admin.html">
+            Login Admin
+        </a>
+
+    </div>
+
+
+    <p>
+        © 2026 Athirah StudyTrack
+    </p>
+
+</footer>
+        
+<!-- =========================================
+     SUPABASE
+========================================= -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+<script src="script.js"></script>
+
+<script src="alumni.js"></script>
+
+
+</body>
+</html>

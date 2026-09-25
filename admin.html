@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin - Athirah StudyTrack</title>
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         LOGIN
+    ========================== -->
+
+    <section id="loginSection" class="login-section">
+
+        <div class="login-card">
+
+            <h1>Athirah StudyTrack</h1>
+
+            <p>Login Admin</p>
+
+            <form id="loginForm">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Email admin"
+                    required
+                >
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Password"
+                    required
+                >
+
+                <button type="submit">
+                    Login
+                </button>
+
+                <p id="loginMessage"></p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         DASHBOARD
+    ========================== -->
+
+    <section
+        id="dashboardSection"
+        class="dashboard-section"
+    >
+
+        <header class="admin-header">
+
+            <div>
+                <h1>Dashboard Admin</h1>
+                <p>Athirah StudyTrack</p>
+            </div>
+
+            <button
+                type="button"
+                id="logoutButton"
+            >
+                Logout
+            </button>
+
+        </header>
+
+
+        <!-- Statistik -->
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <h2 id="totalKampus">0</h2>
+                <p>Kampus</p>
+            </div>
+
+            <div class="stat-card">
+                <h2 id="totalAlumni">0</h2>
+                <p>Alumni</p>
+            </div>
+
+        </div>
+
+
+        <!-- Data Kampus -->
+
+        <section class="admin-section">
+
+            <div class="section-header">
+
+                <h2>Data Kampus</h2>
+
+                <button
+                    type="button"
+                    id="tambahKampusButton"
+                >
+                    + Tambah Kampus
+                </button>
+
+            </div>
+
+            <div id="kampusAdminContainer"></div>
+
+        </section>
+
+
+        <!-- Data Alumni -->
+
+        <section class="admin-section">
+
+            <div class="section-header">
+
+                <h2>Data Alumni</h2>
+
+                <button
+                    type="button"
+                    id="tambahAlumniButton"
+                >
+                    + Tambah Alumni
+                </button>
+
+            </div>
+
+            <div id="alumniAdminContainer"></div>
+
+        </section>
+
+    </section>
+
+
+    <!-- =========================
+         MODAL
+    ========================== -->
+
+    <div
+        id="modal"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                type="button"
+                id="closeModal"
+                class="close-modal"
+            >
+                ×
+            </button>
+
+            <div id="modalContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SUPABASE -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- KONEKSI SUPABASE -->
+
+    <script src="script.js"></script>
+
+    <!-- ADMIN -->
+
+    <script src="admin.js"></script>
+
+</body>
+</html>
