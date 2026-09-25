@@ -1063,3 +1063,1092 @@ body {
         grid-template-columns: 1fr;
     }
 }
+/* =========================================================
+   RESPONSIVE ATHIRAH KARIR
+   Tambahkan di PALING BAWAH style.css
+========================================================= */
+
+
+/* =========================================================
+   DASAR
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   CONTAINER UMUM
+========================================================= */
+
+.container,
+.page-container,
+.hero-container,
+.section-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    width: 100%;
+    max-width: 100%;
+}
+
+.navbar-inner,
+.nav-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.navbar a {
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   HERO / HOME
+========================================================= */
+
+.hero {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero h1,
+.hero h2,
+.hero p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-box {
+    width: 100%;
+    max-width: 700px;
+}
+
+.search-box input {
+    width: 100%;
+    min-width: 0;
+}
+
+.search-box button {
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   HOME RESULTS
+========================================================= */
+
+.home-results {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home-results-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.statistics {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.stat {
+    min-width: 0;
+}
+
+.stat strong,
+.stat span {
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   ALUMNI GRID
+========================================================= */
+
+.alumni-grid,
+.alumni-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   ALUMNI CARD
+========================================================= */
+
+.alumni-card {
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+
+    word-break: normal;
+    overflow-wrap: anywhere;
+}
+
+.alumni-card h3 {
+    overflow-wrap: anywhere;
+}
+
+.alumni-detail {
+    width: 100%;
+    max-width: 100%;
+}
+
+.alumni-detail p {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   ALUMNI HEADER
+========================================================= */
+
+.alumni-header {
+    width: 100%;
+    min-width: 0;
+}
+
+.alumni-info {
+    min-width: 0;
+}
+
+.alumni-info h3 {
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   ALUMNI FILTER
+========================================================= */
+
+.alumni-filters {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filter-group {
+    min-width: 0;
+}
+
+.filter-group select {
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* =========================================================
+   YEAR FILTER
+========================================================= */
+
+.year-filter,
+.year-filter-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.year-button {
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   KAMPUS GRID
+========================================================= */
+
+.kampus-grid {
+    width: 100%;
+    max-width: 1200px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   KAMPUS CARD
+========================================================= */
+
+.kampus-card {
+    width: 100%;
+    min-width: 0;
+
+    padding: 24px;
+
+    overflow: hidden;
+
+    word-break: normal;
+    overflow-wrap: anywhere;
+}
+
+.kampus-card h3 {
+    margin-top: 0;
+
+    overflow-wrap: anywhere;
+
+    line-height: 1.35;
+}
+
+.kampus-card p {
+    overflow-wrap: anywhere;
+}
+
+.kampus-card ul {
+    max-width: 100%;
+
+    padding-left: 20px;
+
+    overflow-wrap: anywhere;
+}
+
+.kampus-card li {
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   FAKULTAS GRID
+========================================================= */
+
+.fakultas-grid {
+    width: 100%;
+    max-width: 1200px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   FAKULTAS CARD
+========================================================= */
+
+.fakultas-card {
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+
+    overflow-wrap: anywhere;
+}
+
+.fakultas-card h3 {
+    overflow-wrap: anywhere;
+}
+
+.fakultas-card p {
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   ADMIN
+========================================================= */
+
+.admin-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.admin-login,
+.login-box {
+    width: 100%;
+    max-width: 450px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.admin-form {
+    width: 100%;
+}
+
+.admin-form input,
+.admin-form select,
+.admin-form textarea {
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* =========================================================
+   ADMIN TABLE
+========================================================= */
+
+.admin-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+.admin-table {
+    width: 100%;
+
+    min-width: 750px;
+
+    border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+    white-space: normal;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   EMPTY RESULT
+========================================================= */
+
+.empty-result {
+    width: 100%;
+    max-width: 100%;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    width: 100%;
+    max-width: 100%;
+
+    overflow: hidden;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   TABLET
+   901px - 1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .container,
+    .page-container,
+    .hero-container,
+    .section-container,
+    .navbar-inner,
+    .nav-container,
+    .footer-container,
+    .admin-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    .alumni-grid,
+    .alumni-container,
+    .kampus-grid,
+    .fakultas-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+    }
+
+
+    .statistics {
+        gap: 16px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET KECIL
+   601px - 900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+    /* NAVBAR */
+
+    .navbar-inner,
+    .nav-container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    /* CONTENT */
+
+    .container,
+    .page-container,
+    .hero-container,
+    .section-container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    /* GRID */
+
+    .alumni-grid,
+    .alumni-container,
+    .kampus-grid,
+    .fakultas-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 18px;
+    }
+
+
+    /* STATISTICS */
+
+    .statistics {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+
+    /* CARD */
+
+    .alumni-card,
+    .kampus-card,
+    .fakultas-card {
+        padding: 20px;
+    }
+
+
+    /* SEARCH */
+
+    .search-box {
+        max-width: 100%;
+    }
+
+
+    /* FILTER */
+
+    .alumni-filters {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   HP
+   Maksimal 600px
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* =====================================================
+       GLOBAL
+    ===================================================== */
+
+    body {
+        font-size: 14px;
+    }
+
+
+    .container,
+    .page-container,
+    .hero-container,
+    .section-container,
+    .navbar-inner,
+    .nav-container,
+    .footer-container,
+    .admin-container {
+        width: 100%;
+
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    /* =====================================================
+       NAVBAR
+    ===================================================== */
+
+    .navbar-inner,
+    .nav-container {
+        min-height: 70px;
+
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    .navbar a {
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+
+    .hero h1 {
+        font-size: 32px;
+
+        line-height: 1.15;
+    }
+
+
+    .hero h2 {
+        font-size: 25px;
+
+        line-height: 1.2;
+    }
+
+
+    .hero p {
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+
+    /* =====================================================
+       SEARCH
+    ===================================================== */
+
+    .search-box {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    .search-box input,
+    .search-box button {
+        width: 100%;
+
+        min-height: 45px;
+    }
+
+
+    /* =====================================================
+       STATISTICS
+    ===================================================== */
+
+    .statistics {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .stat {
+        width: 100%;
+
+        padding: 16px;
+    }
+
+
+    /* =====================================================
+       ALUMNI
+    ===================================================== */
+
+    .alumni-grid,
+    .alumni-container {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+
+    .alumni-card {
+        width: 100%;
+
+        padding: 18px;
+
+        border-radius: 15px;
+    }
+
+
+    .alumni-header {
+        gap: 12px;
+    }
+
+
+    .alumni-avatar {
+        width: 45px;
+        height: 45px;
+
+        flex-shrink: 0;
+    }
+
+
+    .alumni-info h3 {
+        font-size: 16px;
+    }
+
+
+    .alumni-badges {
+        max-width: 100%;
+    }
+
+
+    .alumni-year,
+    .alumni-path {
+        font-size: 11px;
+    }
+
+
+    .alumni-detail {
+        padding: 12px;
+
+        border-radius: 10px;
+    }
+
+
+    .alumni-detail p {
+        font-size: 12px;
+
+        line-height: 1.45;
+    }
+
+
+    .achievement {
+        max-width: 100%;
+
+        font-size: 11px;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+       YEAR FILTER
+    ===================================================== */
+
+    .year-filter,
+    .year-filter-container {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 8px;
+    }
+
+
+    .year-button {
+        width: 100%;
+    }
+
+
+    /* =====================================================
+       FILTER ALUMNI
+    ===================================================== */
+
+    .alumni-filters {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    .filter-group {
+        width: 100%;
+    }
+
+
+    .filter-group select {
+        width: 100%;
+        min-height: 42px;
+    }
+
+
+    /* =====================================================
+       KAMPUS
+    ===================================================== */
+
+    .kampus-grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+
+    .kampus-card {
+        width: 100%;
+
+        padding: 18px;
+
+        border-radius: 15px;
+    }
+
+
+    .kampus-card h3 {
+        font-size: 17px;
+
+        line-height: 1.4;
+    }
+
+
+    .kampus-card p {
+        font-size: 13px;
+
+        line-height: 1.5;
+    }
+
+
+    .kampus-card li {
+        font-size: 12px;
+
+        line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       FAKULTAS
+    ===================================================== */
+
+    .fakultas-grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+
+    .fakultas-card {
+        padding: 18px;
+
+        border-radius: 15px;
+    }
+
+
+    .fakultas-card h3 {
+        font-size: 17px;
+
+        line-height: 1.4;
+    }
+
+
+    .fakultas-card p {
+        font-size: 13px;
+
+        line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       ADMIN
+    ===================================================== */
+
+    .admin-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    .admin-login,
+    .login-box {
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+
+    .admin-form {
+        width: 100%;
+    }
+
+
+    .admin-form input,
+    .admin-form select,
+    .admin-form textarea,
+    .admin-form button {
+        width: 100%;
+
+        min-height: 42px;
+    }
+
+
+    /* =====================================================
+       ADMIN TABLE
+    ===================================================== */
+
+    .admin-table-wrapper {
+        width: 100%;
+
+        overflow-x: auto;
+    }
+
+
+    .admin-table {
+        min-width: 750px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .footer-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    .footer-links {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    footer a {
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   HP SANGAT KECIL
+   Maksimal 380px
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .container,
+    .page-container,
+    .hero-container,
+    .section-container,
+    .navbar-inner,
+    .nav-container,
+    .footer-container,
+    .admin-container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+
+    .alumni-card,
+    .kampus-card,
+    .fakultas-card {
+        padding: 15px;
+    }
+
+
+    .alumni-avatar {
+        width: 42px;
+        height: 42px;
+
+        font-size: 12px;
+    }
+
+
+    .alumni-info h3 {
+        font-size: 15px;
+    }
+
+
+    .alumni-year,
+    .alumni-path {
+        padding: 4px 7px;
+
+        font-size: 10px;
+    }
+
+
+    .alumni-detail p {
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================================
+   MENCEGAH ELEMEN LEBAR KELUAR LAYAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .row,
+    .cards,
+    .card-container {
+        max-width: 100%;
+    }
+
+
+    table {
+        max-width: none;
+    }
+
+
+    pre,
+    code {
+        max-width: 100%;
+
+        overflow-x: auto;
+    }
+
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    a {
+        overflow-wrap: anywhere;
+    }
+
+}
