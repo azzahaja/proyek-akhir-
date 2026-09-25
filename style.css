@@ -502,157 +502,236 @@ body {
 .alumni-detail p:last-child {
     margin-bottom: 0;
 }
-/* =========================================
-   KAMPUS
-========================================= */
+
 
 .kampus-grid {
-    width: 100%;
-    max-width: 1100px;
-    margin: 30px auto;
     display: grid;
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
+
+    margin-top: 30px;
 }
+/* =========================================
+    KAMPUS
+========================================= */
+
 
 .kampus-card {
-    width: 100%;
-    min-width: 0;
+    background: #ffffff;
+
+    border: 1px solid #a9e4c8;
+
+    border-radius: 18px;
+
+    padding: 24px;
+
     display: flex;
     flex-direction: column;
-    padding: 24px;
-    background: #ffffff;
-    border: 1px solid #d8eee2;
-    border-radius: 16px;
-    cursor: pointer;
+
     transition: 0.2s ease;
-    box-sizing: border-box;
 }
+
+
 .kampus-card:hover {
     border-color: #40c98a;
-    transform: translateY(-3px);
-    box-shadow:
-        0 8px 20px
-        rgba(23, 79, 59, 0.08);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 18px rgba(23, 79, 59, 0.08);
 }
+
+
+/* =========================================
+   NAMA KAMPUS
+========================================= */
 
 .kampus-nama {
-    width: 100%;
-    min-width: 0;
-    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 10px;
 }
+
 
 .kampus-nama h3 {
-    margin: 0;
-    color: #174f3b;
-    font-size: 18px;
-    line-height: 1.4;
+    margin: 0 0 5px 0;
+
+    font-size: 17px;
     font-weight: 700;
-    overflow-wrap: anywhere;
+
+    color: #174f3b;
+
+    line-height: 1.2;
 }
 
+
+.kampus-tipe {
+    font-size: 12px;
+
+    color: #60736a;
+}
+
+
+/* =========================================
+   INFORMASI KAMPUS
+========================================= */
+
 .kampus-info {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    min-width: 0;
+    background: #f5f8f7;
+    border-radius: 12px;
+    padding: 14px;
+    margin-top: 10px;
 }
 
 
 .kampus-info p {
-    width: 100%;
-    margin: 0;
+    margin: 0 0 9px 0;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 8px;
+
+    font-size: 13px;
+
     color: #60736a;
-    font-size: 14px;
-    line-height: 1.5;
-    overflow-wrap: anywhere;
+
+    line-height: 1.4;
 }
+
+
+.kampus-info p:last-child {
+    margin-bottom: 0;
+}
+
+
+.kampus-info p span:first-child {
+    width: 18px;
+
+    flex-shrink: 0;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   FAKULTAS & JURUSAN
+========================================= */
+
+.kampus-fakultas {
+    margin-top: 14px;
+}
+
+
+.kampus-fakultas-title {
+    margin: 0 0 7px 0;
+
+    font-size: 13px;
+
+    color: #174f3b;
+
+    font-weight: 700;
+}
+
+
+.kampus-fakultas-list {
+    margin: 0;
+
+    padding-left: 18px;
+
+    color: #60736a;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+.kampus-fakultas-list li {
+    margin-bottom: 3px;
+}
+
+
+.kampus-fakultas-list li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   JUMLAH ALUMNI
+========================================= */
+
+.kampus-card-footer {
+    margin-top: 18px;
+
+    display: flex;
+    align-items: center;
+}
+
 
 .jumlah-alumni {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
-    align-self: flex-start;
-    margin-top: 16px;
-    padding: 8px 14px;
-    background: #a9e4c8;
-    color: #174f3b;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 700;
-    white-space: nowrap;
+
+    padding: 7px 12px;
+
+    background: #d9f7e9;
+
+    color: #247a59;
+
+    border: 1px solid #9de1c2;
+
+    border-radius: 7px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
 }
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 900px) {
-
-    .kampus-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-        gap: 18px;
-
-        padding-left: 20px;
-
-        padding-right: 20px;
-    }
 
 
-    .kampus-card {
-        padding: 20px;
-    }
+.jumlah-alumni:hover {
+    background: #40c98a;
 
+    border-color: #40c98a;
+
+    color: #ffffff;
 }
 
 
 /* =========================================
-   HP
+   RESPONSIVE
 ========================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
     .kampus-grid {
         grid-template-columns: 1fr;
-
-        gap: 16px;
-
-        padding-left: 15px;
-
-        padding-right: 15px;
-    }
-
-
-    .kampus-card {
-        padding: 18px;
-
-        border-radius: 14px;
-    }
-
-
-    .kampus-nama h3 {
-        font-size: 17px;
-
-        line-height: 1.4;
-    }
-
-
-    .kampus-info p {
-        font-size: 13px;
-    }
-
-
-    .jumlah-alumni {
-        font-size: 12px;
-
-        padding: 7px 12px;
     }
 
 }
 
+
+@media (max-width: 480px) {
+
+    .kampus-card {
+        padding: 18px;
+    }
+
+    .kampus-nama h3 {
+        font-size: 16px;
+    }
+
+}
 
 /* =========================================
    FAKULTAS

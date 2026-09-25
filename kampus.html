@@ -1,35 +1,80 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Athirah Studytrack</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<html lang="id">
 
-    <body>
-        <!-- ================= HEADER ================= -->
-    <header class="navbar">
-        <div class="logo">
-            <div class="logo-box">
-            <img src="logo.jpg" alt="Logo Athirah">
-            </div>
-            <span>Athirah StudyTrack</span>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Athirah StudyTrack - Kampus</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <div class="logo-box">
+
+            <img
+                src="logo.jpg"
+                alt="Logo Athirah"
+            >
+
         </div>
-        <nav>
-             <a href="kampus.html">Kampus</a>
-            <a href="alumni.html">Alumni</a>
-            <a href="fakultas.html">Fakultas</a>
-            <a href="index.html#hero">Beranda</a>
-        </nav> 
-    </header>
- <!-- =========================================
-     KAMPUS
-========================================= -->
+
+        <span>
+            Athirah StudyTrack
+        </span>
+
+    </div>
+
+
+    <nav>
+
+        <a href="kampus.html">
+            Kampus
+        </a>
+
+        <a href="alumni.html">
+            Alumni
+        </a>
+
+        <a href="fakultas.html">
+            Fakultas
+        </a>
+
+        <a href="index.html#hero">
+            Beranda
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= KAMPUS ================= -->
 
 <main>
 
     <section class="page-section">
+
 
         <div class="page-header">
 
@@ -46,10 +91,17 @@
         </div>
 
 
+
+        <!--
+            DATA KAMPUS DARI SUPABASE
+            AKAN MUNCUL DI SINI
+        -->
+
         <div
             id="kampusContainer"
             class="kampus-grid"
         ></div>
+
 
     </section>
 
@@ -57,9 +109,7 @@
 
 
 
-<!-- =========================================
-     FOOTER
-========================================= -->
+<!-- ================= FOOTER ================= -->
 
 <footer class="footer">
 
@@ -67,7 +117,7 @@
     <div>
 
         <strong>
-            Athirah Karir
+            Athirah StudyTrack
         </strong>
 
         <p>
@@ -114,7 +164,7 @@
     <div class="footer-bottom">
 
         <p>
-            © 2026 Athirah Karir
+            © 2026 Athirah StudyTrack
         </p>
 
     </div>
@@ -124,13 +174,9 @@
 
 
 
-<!-- =========================================
-     SUPABASE
-========================================= -->
+<!-- ================= SUPABASE ================= -->
 
-<script
-    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
-></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script src="script.js"></script>
 

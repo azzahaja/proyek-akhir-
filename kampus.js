@@ -28,23 +28,26 @@ async function loadKampus() {
 
     if (error) {
 
-        console.error(error);
+        console.error("Error kampus:", error);
 
-        document.getElementById(
-            "kampusContainer"
-        ).innerHTML = `
-            <div class="empty-result">
+        const container =
+            document.getElementById("kampusContainer");
 
-                <h3>
-                    Data kampus gagal dimuat
-                </h3>
+        if (container) {
+            container.innerHTML = `
+                <div class="empty-result">
 
-                <p>
-                    Periksa koneksi Supabase.
-                </p>
+                    <h3>
+                        Data kampus gagal dimuat
+                    </h3>
 
-            </div>
-        `;
+                    <p>
+                        Periksa koneksi Supabase.
+                    </p>
+
+                </div>
+            `;
+        }
 
         return;
     }
@@ -52,9 +55,7 @@ async function loadKampus() {
 
     semuaKampus = data || [];
 
-    tampilkanKampus(
-        semuaKampus
-    );
+    tampilkanKampus(semuaKampus);
 }
 
 
@@ -65,13 +66,23 @@ async function loadKampus() {
 function tampilkanKampus(data) {
 
     const container =
-        document.getElementById(
-            "kampusContainer"
+        document.getElementById("kampusContainer");
+
+
+    if (!container) {
+
+        console.error(
+            "kampusContainer tidak ditemukan."
         );
+
+        return;
+    }
 
 
     container.innerHTML = "";
 
+
+    /* Jika tidak ada data */
 
     if (!data || data.length === 0) {
 
@@ -94,44 +105,54 @@ function tampilkanKampus(data) {
     }
 
 
+    /* =========================================
+       LOOP SETIAP KAMPUS
+    ========================================= */
+
     data.forEach(kampus => {
 
         const alumni =
             kampus.alumni || [];
 
 
+        /* Jumlah alumni */
+
         const jumlahAlumni =
             alumni.length;
 
 
-        /* Fakultas */
+        /* =====================================
+           AMBIL DATA FAKULTAS
+        ===================================== */
 
-        const fakultas =
-            [
-                ...new Set(
-                    alumni
-                        .map(item => item.fakultas)
-                        .filter(Boolean)
-                )
-            ];
+        const fakultas = [
+            ...new Set(
+                alumni
+                    .map(item => item.fakultas)
+                    .filter(Boolean)
+            )
+        ];
 
 
-        /* Jurusan */
+        /* =====================================
+           AMBIL DATA JURUSAN
+        ===================================== */
 
-        const jurusan =
-            [
-                ...new Set(
-                    alumni
-                        .map(item => item.jurusan)
-                        .filter(Boolean)
-                )
-            ];
+        const jurusan = [
+            ...new Set(
+                alumni
+                    .map(item => item.jurusan)
+                    .filter(Boolean)
+            )
+        ];
 
+
+        /* =====================================
+           BUAT CARD
+        ===================================== */
 
         const card =
-            document.createElement(
-                "div"
-            );
+            document.createElement("div");
 
 
         card.className =
@@ -140,66 +161,174 @@ function tampilkanKampus(data) {
 
         card.innerHTML = `
 
-    <div class="kampus-nama">
-        <h3>${kampus.nama}</h3>
-    </div>
+            <!-- NAMA KAMPUS -->
 
-    <p>
-        📍 ${kampus.kota || "-"},
-        ${kampus.provinsi || "-"}
-    </p>
+            <div class="kampus-nama">
 
-    <p>
-        🏫 ${kampus.tipe || "-"}
-    </p>
+                <div class="kampus-icon">
+                    🎓
+                </div>
 
-    <p>
-        🏛 ${
-            fakultas.length
-            ? fakultas.join(", ")
-            : "-"
+                <div>
+
+                    <h3>
+                        ${kampus.nama || "-"}
+                    </h3>
+
+                    <span class="kampus-tipe">
+                        ${kampus.tipe || "Perguruan Tinggi"}
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- INFORMASI KAMPUS -->
+
+            <div class="kampus-info">
+
+                <p>
+
+                    <span>📍</span>
+
+                    <span>
+                        ${kampus.kota || "-"},
+                        ${kampus.provinsi || "-"}
+                    </span>
+
+                </p>
+
+
+                <p>
+
+                    <span>🏫</span>
+
+                    <span>
+                        ${kampus.tipe || "-"}
+                    </span>
+
+                </p>
+
+            </div>
+
+
+            <!-- FAKULTAS -->
+
+            <div class="kampus-fakultas">
+
+                <p class="kampus-fakultas-title">
+                    Fakultas
+                </p>
+
+                <ul class="kampus-fakultas-list">
+
+                    ${
+                        fakultas.length
+                        ?
+                        fakultas
+                            .map(
+                                item =>
+                                    `<li>${item}</li>`
+                            )
+                            .join("")
+                        :
+                        `<li>Belum ada data</li>`
+                    }
+
+                </ul>
+
+            </div>
+
+
+            <!-- JURUSAN -->
+
+            <div class="kampus-fakultas">
+
+                <p class="kampus-fakultas-title">
+                    Jurusan
+                </p>
+
+                <ul class="kampus-fakultas-list">
+
+                    ${
+                        jurusan.length
+                        ?
+                        jurusan
+                            .map(
+                                item =>
+                                    `<li>${item}</li>`
+                            )
+                            .join("")
+                        :
+                        `<li>Belum ada data</li>`
+                    }
+
+                </ul>
+
+            </div>
+
+
+            <!-- JUMLAH ALUMNI -->
+
+            <div class="kampus-card-footer">
+
+                <span
+                    class="jumlah-alumni"
+                    title="Lihat alumni dari kampus ini"
+                >
+                    ${jumlahAlumni} Alumni
+                </span>
+
+            </div>
+
+        `;
+
+
+        /* =====================================
+           TOMBOL JUMLAH ALUMNI
+           
+           HANYA BAGIAN JUMLAH ALUMNI
+           YANG BISA DIKLIK
+        ===================================== */
+
+        const tombolAlumni =
+            card.querySelector(
+                ".jumlah-alumni"
+            );
+
+
+        if (tombolAlumni) {
+
+            tombolAlumni.addEventListener(
+                "click",
+                function(event) {
+
+                    event.stopPropagation();
+
+
+                    window.location.href =
+                        `alumni.html?kampus_id=${kampus.id}`;
+
+                }
+            );
+
         }
-    </p>
-
-    <p>
-        📚 ${
-            jurusan.length
-            ? jurusan.join(", ")
-            : "-"
-        }
-    </p>
-
-    <span class="jumlah-alumni">
-        ${jumlahAlumni} Alumni
-    </span>
-
-`;
 
 
-        /*
-         * Ketika kartu diklik,
-         * masuk ke halaman alumni
-         * dengan filter kampus.
-         */
+        /* =====================================
+           MASUKKAN CARD KE CONTAINER
+        ===================================== */
 
-        card.addEventListener(
-            "click",
-            function() {
-
-                window.location.href =
-                    `alumni.html?kampus_id=${kampus.id}`;
-
-            }
-        );
-
-
-        container.appendChild(
-            card
-        );
+        container.appendChild(card);
 
     });
 
 }
 
+
+/* =========================================
+   JALANKAN SAAT HALAMAN DIBUKA
+========================================= */
 
 loadKampus();
