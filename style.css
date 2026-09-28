@@ -817,13 +817,13 @@ body {
 ========================================= */
 
 .feature-menu {
-    display: grid;
-    grid-template-columns:
-        repeat(4, 1fr);
+    display:flex;
+    flex-wrap: wrap; 
     background: #f7c943;
 }
 
 .feature {
+    flex: 1 1 25%;
     min-height: 165px;
     padding: 30px 48px;
     border-right: 1px solid rgba(23,79,59,0.1);
