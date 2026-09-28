@@ -778,13 +778,14 @@ body {
 ========================================= */
 
 .statistics {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     max-width: 850px;
     padding-top: 25px;
 }
 
 .stat {
+    flex: 1 1 33.33%;
     padding-right: 35px;
     border-right: 2px solid #f7c943;
     
