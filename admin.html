@@ -145,6 +145,48 @@
             <div id="alumniAdminContainer"></div>
 
         </section>
+        <section class="admin-section">
+
+    <div class="section-header">
+    <div>
+        <h2>Import Data Alumni</h2>
+        <p>
+            Tambahkan banyak data alumni sekaligus menggunakan file CSV.
+        </p>
+    </div>
+    </div>
+
+    <div class="import-box">
+
+        <label for="csvFile" class="import-label">
+            Pilih File CSV
+        </label>
+
+        <input
+            type="file"
+            id="csvFile"
+            accept=".csv"
+        >
+
+        <p class="import-info">
+            Format kolom:
+            nama, kampus_id, fakultas, jurusan,
+            angkatan, jalur_masuk, prestasi
+        </p>
+
+        <button
+            type="button"
+            id="previewCsvBtn"
+            class="admin-button"
+        >
+            Preview CSV
+        </button>
+
+    </div>
+
+    <div id="csvPreview" class="csv-preview"></div>
+
+</section>
 
     </section>
 

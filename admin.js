@@ -1357,8 +1357,281 @@ async function editAlumni(id) {
 }
 
 
+
 /* =========================
    MULAI
 ========================= */
 
 cekLogin();
+/* ================================
+   IMPORT CSV
+================================ */
+
+let dataCSV = [];
+
+
+/* ================================
+   TOMBOL PREVIEW CSV
+================================ */
+
+document
+    .getElementById("previewCsvBtn")
+    ?.addEventListener("click", previewCSV);
+
+
+/* ================================
+   BACA FILE CSV
+================================ */
+
+function previewCSV() {
+
+    const fileInput = document.getElementById("csvFile");
+    const preview = document.getElementById("csvPreview");
+
+    preview.innerHTML = "";
+
+    if (!fileInput.files.length) {
+
+        preview.innerHTML = `
+            <div class="import-error">
+                Silakan pilih file CSV terlebih dahulu.
+            </div>
+        `;
+
+        return;
+    }
+
+    const file = fileInput.files[0];
+
+    if (!file.name.toLowerCase().endsWith(".csv")) {
+
+        preview.innerHTML = `
+            <div class="import-error">
+                File harus berformat CSV.
+            </div>
+        `;
+
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(event) {
+
+        const text = event.target.result;
+
+        const rows = parseCSV(text);
+
+        if (rows.length < 2) {
+
+            preview.innerHTML = `
+                <div class="import-error">
+                    File CSV tidak memiliki data.
+                </div>
+            `;
+
+            return;
+        }
+
+        const headers = rows[0].map(header =>
+            header.trim().toLowerCase()
+        );
+
+        const kolomWajib = [
+            "nama",
+            "kampus_id",
+            "fakultas",
+            "jurusan",
+            "angkatan",
+            "jalur_masuk",
+            "prestasi"
+        ];
+
+        const kolomKurang = kolomWajib.filter(
+            kolom => !headers.includes(kolom)
+        );
+
+        if (kolomKurang.length > 0) {
+
+            preview.innerHTML = `
+                <div class="import-error">
+                    <strong>Kolom CSV tidak lengkap.</strong><br>
+                    Kolom yang kurang:
+                    ${kolomKurang.join(", ")}
+                </div>
+            `;
+
+            return;
+        }
+
+        dataCSV = rows
+            .slice(1)
+            .filter(row =>
+                row.some(value => value.trim() !== "")
+            )
+            .map(row => {
+
+                const data = {};
+
+                headers.forEach((header, index) => {
+                    data[header] = row[index]
+                        ? row[index].trim()
+                        : "";
+                });
+
+                return data;
+            });
+
+        tampilkanPreviewCSV(dataCSV);
+    };
+
+    reader.readAsText(file);
+}
+
+
+/* ================================
+   PARSER CSV
+   Mendukung , dan ;
+================================ */
+
+function parseCSV(text) {
+
+    const baris = text
+        .replace(/\r\n/g, "\n")
+        .replace(/\r/g, "\n")
+        .split("\n")
+        .filter(baris => baris.trim() !== "");
+
+    if (baris.length === 0) {
+        return [];
+    }
+
+    const pemisah = baris[0].includes(";")
+        ? ";"
+        : ",";
+
+    return baris.map(baris => {
+
+        const hasil = [];
+
+        let nilai = "";
+        let dalamKutipan = false;
+
+        for (let i = 0; i < baris.length; i++) {
+
+            const karakter = baris[i];
+            const berikutnya = baris[i + 1];
+
+            if (
+                karakter === '"' &&
+                dalamKutipan &&
+                berikutnya === '"'
+            ) {
+                nilai += '"';
+                i++;
+            }
+
+            else if (karakter === '"') {
+                dalamKutipan = !dalamKutipan;
+            }
+
+            else if (
+                karakter === pemisah &&
+                !dalamKutipan
+            ) {
+                hasil.push(nilai.trim());
+                nilai = "";
+            }
+
+            else {
+                nilai += karakter;
+            }
+        }
+
+        hasil.push(nilai.trim());
+
+        return hasil;
+    });
+}
+
+
+/* ================================
+   TAMPILKAN PREVIEW
+================================ */
+
+function tampilkanPreviewCSV(data) {
+
+    const preview = document.getElementById("csvPreview");
+
+    if (!data.length) {
+
+        preview.innerHTML = `
+            <div class="import-error">
+                Tidak ada data yang dapat diimport.
+            </div>
+        `;
+
+        return;
+    }
+
+    let html = `
+        <div class="import-success">
+            <strong>${data.length} data ditemukan.</strong>
+            Silakan periksa data sebelum melakukan import.
+        </div>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Kampus ID</th>
+                    <th>Fakultas</th>
+                    <th>Jurusan</th>
+                    <th>Angkatan</th>
+                    <th>Jalur Masuk</th>
+                    <th>Prestasi</th>
+                </tr>
+            </thead>
+
+            <tbody>
+    `;
+
+    data.slice(0, 10).forEach(alumni => {
+
+        html += `
+            <tr>
+                <td>${alumni.nama}</td>
+
+                <td>${alumni.kampus_id}</td>
+
+                <td>${alumni.fakultas}</td>
+
+                <td>${alumni.jurusan}</td>
+
+                <td>${alumni.angkatan}</td>
+
+                <td>${alumni.jalur_masuk}</td>
+
+                <td>${alumni.prestasi || "-"}</td>
+            </tr>
+        `;
+    });
+
+    html += `
+            </tbody>
+
+        </table>
+
+        <button
+            type="button"
+            class="admin-button"
+            onclick="importDataCSV()"
+            style="margin-top:15px;"
+        >
+            Import ${data.length} Data
+        </button>
+    `;
+
+    preview.innerHTML = html;
+}
