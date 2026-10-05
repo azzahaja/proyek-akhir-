@@ -7,6 +7,8 @@ let semuaAlumniHome = [];
 
 async function loadAlumniHome() {
 
+ console.log("Mulai mengambil data alumni...");
+
     const { data, error } = await db
         .from("alumni")
         .select(`
@@ -26,36 +28,30 @@ async function loadAlumniHome() {
             ascending: false
         });
 
-
     if (error) {
 
-        console.error(error);
+        console.error("ERROR SUPABASE:", error);
 
-        document.getElementById(
-            "alumniContainer"
-        ).innerHTML = `
+        document.getElementById("alumniContainer").innerHTML = `
             <div class="empty-result">
-
-                <h3>
-                    Data gagal dimuat
-                </h3>
-
-                <p>
-                    Periksa koneksi Supabase.
-                </p>
-
+                <h3>Data gagal dimuat</h3>
+                <p>${error.message}</p>
             </div>
         `;
 
         return;
     }
 
+    console.log("DATA ALUMNI:", data);
 
     semuaAlumniHome = data || [];
 
-    tampilkanAlumniHome(
-        semuaAlumniHome
+    console.log(
+        "Jumlah alumni:",
+        semuaAlumniHome.length
     );
+
+    tampilkanAlumniHome(semuaAlumniHome);
 }
 
 
@@ -106,43 +102,59 @@ function tampilkanAlumniHome(data) {
             "alumni-card";
 
 
-       card.innerHTML = `
+card.innerHTML = `
     <div class="alumni-header">
-
-    
         <div class="alumni-info">
-
             <h3>${alumni.nama}</h3>
 
-            <p class="alumni-year">
-                Angkatan ${alumni.angkatan}
-            </p>
+            <div class="alumni-badges">
+                <span class="alumni-year">
+                    Angkatan ${alumni.angkatan}
+                </span>
 
+                <span class="alumni-path">
+                    ${alumni.jalur_masuk || "-"}
+                </span>
+            </div>
         </div>
-
     </div>
 
     <div class="alumni-detail">
 
         <p>
-            🎓 ${alumni.kampus?.nama || "-"}
+            <span class="detail-icon">🎓</span>
+            <span class="campus-name">
+                ${alumni.kampus?.nama || "-"}
+            </span>
         </p>
 
         <p>
-            📖 ${alumni.jurusan || "-"}
+            <span class="detail-icon">🏛️</span>
+            <span class="faculty-name">
+                ${alumni.fakultas || "-"}
+            </span>
+        </p>
+
+        <p>
+            <span class="detail-icon">📖</span>
+            <span class="major-name">
+                ${alumni.jurusan || "-"}
+            </span>
         </p>
 
         ${
             alumni.prestasi
-            ? `<span class="achievement">
-                🏅 ${alumni.prestasi}
-               </span>`
+            ? `
+                <span class="achievement">
+                    <span class="achievement-icon">🏅</span>
+                    ${alumni.prestasi}
+                </span>
+            `
             : ""
         }
 
     </div>
 `;
-
         container.appendChild(card);
 
     });

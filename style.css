@@ -252,10 +252,70 @@ body {
 
 .alumni-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
 }
+/* =========================================
+   ALUMNI HOME CARD
+========================================= */
+.home-results .alumni-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.home-results .alumni-card {
+    min-width: 0;
+}
 
+.home-results .alumni-detail {
+    min-width: 0;
+}
+
+.home-results .alumni-detail p {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    gap: 8px;
+}
+
+.home-results .alumni-detail p span {
+    flex-shrink: 0;
+    width: 18px;
+    text-align: center;
+}
+
+.home-results .campus-name,
+.home-results .faculty-name,
+.home-results .major-name {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+    overflow-wrap: break-word;
+}
+@media (max-width: 900px) {
+    .home-results .alumni-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .home-results .alumni-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.detail-icon {
+    width: 18px !important;
+    min-width: 18px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.campus-name,
+.faculty-name,
+.major-name {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+}
 /* =========================================
    KARTU ALUMNI
 ========================================= */
@@ -392,44 +452,39 @@ body {
 
 .alumni-detail {
     background: #f5f8f7;
-
     border-radius: 12px;
-
     padding: 14px;
-
     margin-top: 10px;
 }
 
-
 .alumni-detail p {
     margin: 0 0 9px 0;
-
     display: flex;
     align-items: flex-start;
-
     gap: 8px;
-
     font-size: 13px;
-
     color: #60736a;
-
     line-height: 1.4;
 }
-
 
 .alumni-detail p:last-child {
     margin-bottom: 0;
 }
 
-
-.alumni-detail p span {
+/* IKON */
+.alumni-detail p > span:first-child {
     width: 18px;
-
+    min-width: 18px;
     flex-shrink: 0;
-
-    text-align: center;
 }
 
+/* TEKS */
+.alumni-detail p > span:not(:first-child) {
+    width: auto;
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+}
 
 /* Nama kampus */
 
@@ -486,22 +541,6 @@ body {
 
 
 
-.alumni-detail {
-    background: #f5f8f7;
-    border-radius: 12px;
-    padding: 14px;
-    margin-top: 10px;
-}
-
-.alumni-detail p {
-    margin: 0 0 8px 0;
-    font-size: 13px;
-    color: #60736a;
-}
-
-.alumni-detail p:last-child {
-    margin-bottom: 0;
-}
 
 
 .kampus-grid {
