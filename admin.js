@@ -1635,3 +1635,180 @@ function tampilkanPreviewCSV(data) {
 
     preview.innerHTML = html;
 }
+/* ================================
+   IMPORT DATA KE SUPABASE
+================================ */
+
+async function importDataCSV() {
+
+    const preview = document.getElementById("csvPreview");
+
+    if (!dataCSV || dataCSV.length === 0) {
+        preview.innerHTML += `
+            <div class="import-error">
+                Tidak ada data yang dapat diimport.
+            </div>
+        `;
+        return;
+    }
+
+    /* Ubah data CSV menjadi format tabel alumni */
+
+    const dataImport = dataCSV.map(alumni => ({
+        nama: alumni.nama,
+        kampus_id: Number(alumni.kampus_id),
+        fakultas: alumni.fakultas,
+        jurusan: alumni.jurusan,
+        angkatan: Number(alumni.angkatan),
+        jalur_masuk: alumni.jalur_masuk,
+        prestasi: alumni.prestasi || null
+    }));
+
+
+    /* ================================
+       VALIDASI DATA
+    ================================= */
+
+    const dataTidakValid = dataImport.filter(alumni => {
+
+        return (
+            !alumni.nama ||
+            !alumni.kampus_id ||
+            !alumni.fakultas ||
+            !alumni.jurusan ||
+            !alumni.angkatan ||
+            !alumni.jalur_masuk
+        );
+
+    });
+
+
+    if (dataTidakValid.length > 0) {
+
+        preview.innerHTML += `
+            <div class="import-error">
+                Ada <strong>${dataTidakValid.length}</strong>
+                data yang tidak lengkap.
+                <br><br>
+                Pastikan kolom berikut terisi:
+                nama, kampus_id, fakultas, jurusan,
+                angkatan, dan jalur_masuk.
+            </div>
+        `;
+
+        return;
+    }
+
+
+    /* ================================
+       CEK KAMPUS ID
+    ================================= */
+
+    const daftarKampus = [
+        ...new Set(
+            dataImport.map(alumni => alumni.kampus_id)
+        )
+    ];
+
+    const { data: kampusAda, error: errorKampus } = await db
+        .from("kampus")
+        .select("id")
+        .in("id", daftarKampus);
+
+
+    if (errorKampus) {
+
+        console.error("Error cek kampus:", errorKampus);
+
+        preview.innerHTML += `
+            <div class="import-error">
+                Gagal mengecek kampus.
+                <br>
+                ${errorKampus.message}
+            </div>
+        `;
+
+        return;
+    }
+
+
+    const idKampusAda = kampusAda.map(kampus => kampus.id);
+
+    const idKampusTidakAda = daftarKampus.filter(
+        id => !idKampusAda.includes(id)
+    );
+
+
+    if (idKampusTidakAda.length > 0) {
+
+        preview.innerHTML += `
+            <div class="import-error">
+                <strong>Import dibatalkan.</strong>
+                <br><br>
+                Kampus ID berikut tidak ditemukan di Supabase:
+                <strong>${idKampusTidakAda.join(", ")}</strong>
+                <br><br>
+                Periksa kembali kolom kampus_id pada CSV.
+            </div>
+        `;
+
+        return;
+    }
+
+
+    /* ================================
+       KIRIM KE SUPABASE
+    ================================= */
+
+    preview.innerHTML += `
+        <div class="import-success">
+            Sedang mengimport ${dataImport.length} data...
+        </div>
+    `;
+
+
+    const { data, error } = await db
+        .from("alumni")
+        .insert(dataImport)
+        .select();
+
+
+    /* ================================
+       JIKA ERROR
+    ================================= */
+
+    if (error) {
+
+        console.error("Error import alumni:", error);
+
+        preview.innerHTML += `
+            <div class="import-error">
+                <strong>Import gagal.</strong>
+                <br><br>
+                ${error.message}
+            </div>
+        `;
+
+        return;
+    }
+
+
+    /* ================================
+       BERHASIL
+    ================================= */
+
+    preview.innerHTML += `
+        <div class="import-success">
+            <strong>Import berhasil!</strong>
+            <br>
+            ${data.length} data alumni berhasil ditambahkan ke Supabase.
+        </div>
+    `;
+
+
+    /* Kosongkan file */
+
+    document.getElementById("csvFile").value = "";
+
+    dataCSV = [];
+}
