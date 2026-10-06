@@ -1655,14 +1655,24 @@ async function importDataCSV() {
     /* Ubah data CSV menjadi format tabel alumni */
 
     const dataImport = dataCSV.map(alumni => ({
-        nama: alumni.nama,
-        kampus_id: Number(alumni.kampus_id),
-        fakultas: alumni.fakultas,
-        jurusan: alumni.jurusan,
-        angkatan: Number(alumni.angkatan),
-        jalur_masuk: alumni.jalur_masuk,
-        prestasi: alumni.prestasi || null
-    }));
+    nama: alumni.nama?.trim() || null,
+
+    kampus_id: alumni.kampus_id?.trim()
+        ? Number(alumni.kampus_id)
+        : null,
+
+    fakultas: alumni.fakultas?.trim() || null,
+
+    jurusan: alumni.jurusan?.trim() || null,
+
+    angkatan: alumni.angkatan?.trim()
+        ? Number(alumni.angkatan)
+        : null,
+
+    jalur_masuk: alumni.jalur_masuk?.trim() || null,
+
+    prestasi: alumni.prestasi?.trim() || null
+}));
 
 
     /* ================================
@@ -1670,34 +1680,23 @@ async function importDataCSV() {
     ================================= */
 
     const dataTidakValid = dataImport.filter(alumni => {
-
-        return (
-            !alumni.nama ||
-            !alumni.kampus_id ||
-            !alumni.fakultas ||
-            !alumni.jurusan ||
-            !alumni.angkatan ||
-            !alumni.jalur_masuk
-        );
-
-    });
+    return !alumni.nama;
+});
 
 
     if (dataTidakValid.length > 0) {
 
-        preview.innerHTML += `
-            <div class="import-error">
-                Ada <strong>${dataTidakValid.length}</strong>
-                data yang tidak lengkap.
-                <br><br>
-                Pastikan kolom berikut terisi:
-                nama, kampus_id, fakultas, jurusan,
-                angkatan, dan jalur_masuk.
-            </div>
-        `;
+    preview.innerHTML += `
+        <div class="import-error">
+            Ada <strong>${dataTidakValid.length}</strong>
+            data yang tidak valid.
+            <br><br>
+            Kolom <strong>nama</strong> wajib diisi.
+        </div>
+    `;
 
-        return;
-    }
+    return;
+}
 
 
     /* ================================
