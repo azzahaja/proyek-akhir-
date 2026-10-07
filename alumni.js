@@ -397,6 +397,8 @@ function tampilkanAlumni() {
 // BUAT KARTU ALUMNI
 // =========================================
 
+
+
 function buatKartuAlumni(alumni) {
 
     const card =
@@ -405,20 +407,94 @@ function buatKartuAlumni(alumni) {
     card.className = "alumni-card";
 
 
-    // Ambil inisial
+    // =========================
+    // INISIAL
+    // =========================
+
     const inisial =
         alumni.nama
-            .trim()
-            .split(/\s+/)
-            .map(kata => kata.charAt(0))
-            .slice(0, 2)
-            .join("")
-            .toUpperCase();
+            ? alumni.nama
+                .trim()
+                .split(/\s+/)
+                .map(kata => kata.charAt(0))
+                .slice(0, 2)
+                .join("")
+                .toUpperCase()
+            : "";
 
 
-    const namaKampus =
-        alumni.kampus?.nama || "-";
+    // =========================
+    // BADGE
+    // =========================
 
+    const tahunHTML =
+        alumni.angkatan
+            ? `
+                <span class="alumni-year">
+                    Angkatan ${alumni.angkatan}
+                </span>
+            `
+            : "";
+
+
+    const jalurHTML =
+        alumni.jalur_masuk
+            ? `
+                <span class="alumni-path">
+                    ${alumni.jalur_masuk}
+                </span>
+            `
+            : "";
+
+
+    // =========================
+    // KAMPUS
+    // =========================
+
+    const kampusHTML =
+        alumni.kampus?.nama
+            ? `
+                <p class="campus-name">
+                    <span>🎓</span>
+                    ${alumni.kampus.nama}
+                </p>
+            `
+            : "";
+
+
+    // =========================
+    // FAKULTAS
+    // =========================
+
+    const fakultasHTML =
+        alumni.fakultas
+            ? `
+                <p class="faculty-name">
+                    <span>🏛</span>
+                    ${alumni.fakultas}
+                </p>
+            `
+            : "";
+
+
+    // =========================
+    // JURUSAN
+    // =========================
+
+    const jurusanHTML =
+        alumni.jurusan
+            ? `
+                <p class="major-name">
+                    <span>📚</span>
+                    ${alumni.jurusan}
+                </p>
+            `
+            : "";
+
+
+    // =========================
+    // PRESTASI
+    // =========================
 
     const prestasiHTML =
         alumni.prestasi &&
@@ -428,9 +504,13 @@ function buatKartuAlumni(alumni) {
                     <span class="achievement-icon">🏅</span>
                     <span>${alumni.prestasi}</span>
                 </div>
-              `
+            `
             : "";
 
+
+    // =========================
+    // TAMPILKAN KARTU
+    // =========================
 
     card.innerHTML = `
 
@@ -443,18 +523,14 @@ function buatKartuAlumni(alumni) {
             <div class="alumni-info">
 
                 <h3>
-                    ${alumni.nama}
+                    ${alumni.nama || ""}
                 </h3>
 
                 <div class="alumni-badges">
 
-                    <span class="alumni-year">
-                        Angkatan ${alumni.angkatan}
-                    </span>
+                    ${tahunHTML}
 
-                    <span class="alumni-path">
-                        ${alumni.jalur_masuk}
-                    </span>
+                    ${jalurHTML}
 
                 </div>
 
@@ -465,35 +541,22 @@ function buatKartuAlumni(alumni) {
 
         <div class="alumni-detail">
 
-            <p class="campus-name">
-                <span>🎓</span>
-                ${namaKampus}
-            </p>
+            ${kampusHTML}
 
-            <p class="faculty-name">
-                <span>🏛</span>
-                ${alumni.fakultas}
-            </p>
+            ${fakultasHTML}
 
-            <p class="major-name">
-                <span>📚</span>
-                ${alumni.jurusan}
-            </p>
+            ${jurusanHTML}
 
         </div>
 
 
-       ${prestasiHTML}
+        ${prestasiHTML}
 
-
-        
     `;
 
 
     return card;
 }
-
-
 // =========================================
 // ERROR
 // =========================================

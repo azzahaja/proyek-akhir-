@@ -105,42 +105,75 @@ function tampilkanAlumniHome(data) {
 card.innerHTML = `
     <div class="alumni-header">
         <div class="alumni-info">
-            <h3>${alumni.nama}</h3>
+
+            <h3>${alumni.nama || ""}</h3>
 
             <div class="alumni-badges">
-                <span class="alumni-year">
-                    Angkatan ${alumni.angkatan}
-                </span>
 
-                <span class="alumni-path">
-                    ${alumni.jalur_masuk || "-"}
-                </span>
+                ${
+                    alumni.angkatan
+                    ? `
+                        <span class="alumni-year">
+                            Angkatan ${alumni.angkatan}
+                        </span>
+                    `
+                    : ""
+                }
+
+                ${
+                    alumni.jalur_masuk
+                    ? `
+                        <span class="alumni-path">
+                            ${alumni.jalur_masuk}
+                        </span>
+                    `
+                    : ""
+                }
+
             </div>
         </div>
     </div>
 
     <div class="alumni-detail">
 
-        <p>
-            <span class="detail-icon">🎓</span>
-            <span class="campus-name">
-                ${alumni.kampus?.nama || "-"}
-            </span>
-        </p>
+        ${
+            alumni.kampus?.nama
+            ? `
+                <p>
+                    <span class="detail-icon">🎓</span>
+                    <span class="campus-name">
+                        ${alumni.kampus.nama}
+                    </span>
+                </p>
+            `
+            : ""
+        }
 
-        <p>
-            <span class="detail-icon">🏛️</span>
-            <span class="faculty-name">
-                ${alumni.fakultas || "-"}
-            </span>
-        </p>
+        ${
+            alumni.fakultas
+            ? `
+                <p>
+                    <span class="detail-icon">🏛️</span>
+                    <span class="faculty-name">
+                        ${alumni.fakultas}
+                    </span>
+                </p>
+            `
+            : ""
+        }
 
-        <p>
-            <span class="detail-icon">📖</span>
-            <span class="major-name">
-                ${alumni.jurusan || "-"}
-            </span>
-        </p>
+        ${
+            alumni.jurusan
+            ? `
+                <p>
+                    <span class="detail-icon">📖</span>
+                    <span class="major-name">
+                        ${alumni.jurusan}
+                    </span>
+                </p>
+            `
+            : ""
+        }
 
         ${
             alumni.prestasi
