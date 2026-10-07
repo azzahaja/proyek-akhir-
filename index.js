@@ -216,6 +216,10 @@ function cariAlumni() {
         tampilkanAlumniHome(
             semuaAlumniHome
         );
+        document.getElementById("alumniContainer").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 
         return;
     }
@@ -252,9 +256,15 @@ function cariAlumni() {
         );
 
 
-    tampilkanAlumniHome(
+   tampilkanAlumniHome(
         hasil
     );
+
+    // SCROLL OTOMATIS KE HASIL
+    document.getElementById("alumniContainer").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 }
 
 
