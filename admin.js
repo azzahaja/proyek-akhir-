@@ -438,7 +438,8 @@ tambahKampusButton.addEventListener(
 
             <h2>Tambah Kampus</h2>
 
-            <form id="formKampus">
+            
+<form id="formKampus" class="admin-form">
 
                 <label>Nama Kampus</label>
 
@@ -612,8 +613,8 @@ tambahAlumniButton.addEventListener(
 
             <h2>Tambah Alumni</h2>
 
-            <form id="formAlumni">
-
+               
+            <form id="formAlumni" class="admin-form">
                 <label>Nama Alumni</label>
 
                 <input
@@ -951,7 +952,9 @@ async function editKampus(id) {
 
         <h2>Edit Kampus</h2>
 
-        <form id="formEditKampus">
+        
+<form id="formEditKampus" 
+class="admin-form">
 
             <label>Nama Kampus</label>
 
@@ -1145,7 +1148,8 @@ async function editAlumni(id) {
 
         <h2>Edit Alumni</h2>
 
-        <form id="formEditAlumni">
+        <form id="formEditAlumni"
+         class="admin-form">
 
             <label>Nama Alumni</label>
 
